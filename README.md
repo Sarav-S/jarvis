@@ -1,2 +1,2 @@
-# jarvis
+# Jarvis
 Self Hosted Task Manager
