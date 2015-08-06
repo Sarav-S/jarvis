@@ -24,6 +24,7 @@ body {
   background: #efefef;
   padding: 10px;
   font-family: 'Open Sans', sans-serif;
+  position: relative;
 }
 /*=== 2. Anchor Link ===*/
 a {
@@ -297,4 +298,65 @@ label:hover:before {
 
 .brand-name {
 	font-family: "Lobster";
+}
+
+#login,
+#forgot-password {
+  position: absolute;
+  width: 260px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    transition: all .35s ease-in-out;
+}
+
+.wrapper .container {
+  position: relative;
+}
+
+#login.active {
+  opacity: 1;
+  left: 0;
+  z-index: 9;
+}
+
+#login {
+  opacity: 0;
+  z-index: -1;
+  left:-100%;
+}
+
+#forgot-password.active {
+  opacity: 1;
+  right: 0;
+  z-index: 9;
+}
+
+
+#forgot-password {
+  opacity: 0;
+  right: -100%;
+  z-index: -1;
+}
+
+.wrapper {
+  margin: 50px 0;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 399px) {
+  /* #login, #forgot-password {
+      margin: 0px !important;
+      left: 0px !important;
+  } */
+}
+
+.errors {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.errors ul {
+  list-style: none;
 }

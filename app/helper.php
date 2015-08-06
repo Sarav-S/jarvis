@@ -1,7 +1,7 @@
 <?php
 
 /* draws a calendar */
-function draw_calendar($month,$year){
+function draw_calendar($month, $year, $flag){
 
 	/* draw table */
 	$calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
@@ -26,9 +26,31 @@ function draw_calendar($month,$year){
 		$days_in_this_week++;
 	endfor;
 
+	if ($flag) {
+		$projects = App\Task::whereBetween('due_date', [
+		    \Carbon\Carbon::createFromDate($year, $month)->startOfMonth(),
+		    \Carbon\Carbon::createFromDate($year, $month)->endOfMonth()
+		])->where('status', 0)->get();
+
+		$bookedDates = [];
+		foreach($projects as $project) {
+			$bookedDates[] = \Carbon\Carbon::createFromFormat(\Config::get('jarvis.date_format'), $project->due_date)->format('d');
+		}
+	}
+
 	/* keep going with days.... */
 	for($list_day = 1; $list_day <= $days_in_month; $list_day++):
-		$calendar.= '<td class="calendar-day">';
+
+		$class = "";
+		if (in_array($list_day, $bookedDates)) {
+			if ($list_day < date('d')) {
+				$class = "delayed";
+			} else {
+				$class = "on-process";
+			}
+		}
+
+		$calendar.= '<td class="calendar-day '.$class.'" data-href="'.route('tasks.index').'?date='.$list_day.'-'.$month.'-'.$year.'">';
 			/* add in the day number */
 			$calendar.= '<div class="day-number">'.$list_day.'</div>';
 
@@ -62,4 +84,16 @@ function draw_calendar($month,$year){
 	
 	/* all done, return result */
 	return $calendar;
+}
+
+function statusOptions() {
+	return ['0' => 'Pending', '1' => 'Completed'];
+}
+
+function getProjects() {
+	return App\Project::latest()->get();
+}
+
+function getCategoryOptions() {
+	return App\Category::lists('name', 'id');
 }

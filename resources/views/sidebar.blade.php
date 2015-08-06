@@ -1,5 +1,4 @@
-<ul class="tabs">
-	<li class="active">Personal</li>
-	<li>Office</li>
-	<li>Others</li>
-</ul>
+<h4>Select an items to view its details</h4>
+<div class="dynamic-content">
+	
+</div>

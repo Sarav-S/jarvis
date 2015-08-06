@@ -14,7 +14,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script>
 	jQuery(document).ready(function(e){
-		$('#lg_username').focus();
 		$('.form-toggler').click(function(e) {
 			e.preventDefault();
 			$($(this).attr('data-hide')).removeClass('active');
@@ -29,7 +28,7 @@
 		<!-- Where all the magic happens -->
 		<!-- LOGIN FORM -->
 		<h1 class="brand-name text-center">Jarvis</h1>
-
+		
 		<div class="text-center errors">
 			@if(Session::has('status'))
 				<p class="text-success">{!! Session::get('status') !!}</p>
@@ -43,37 +42,38 @@
 			            @endforeach
 			        </ul>
 			    </div>
-			@endif			
+			@endif
 		</div>	
+
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
-					<div class="text-center active" id="login">
-						<div class="logo">login</div>
+					<!-- FORGOT PASSWORD FORM -->
+					<div class="text-center active" id="forgot-password">
+						<div class="logo">Reset password</div>
 						<!-- Main Form -->
 						<div class="login-form-1">
-							<form id="login-form" action="{!! route('login.post') !!}" class="text-left" method="POST">
+							<form class="text-left" action="{!! route('reset-password.post') !!}" method="POST">
 								{!! csrf_field() !!}
+								<input type="hidden" name="token" value="{{ $token }}">
+								<input type="hidden" name="email" value="{{ old('email') }}">
 								<div class="login-form-main-message"></div>
 								<div class="main-login-form">
 									<div class="login-group">
 										<div class="form-group">
-											<label for="lg_username" class="sr-only">Username</label>
-											<input type="text" class="form-control" id="lg_username" name="email" placeholder="Username" value="{!! old('email') !!}" autocomplete="off">
+											<input placeholder="Email Address" type="email" name="email" class="form-control" value="{{ old('email') }}">
 										</div>
 										<div class="form-group">
-											<label for="lg_password" class="sr-only">Password</label>
-											<input type="password" class="form-control" id="lg_password" name="password" placeholder="Password">
+											<input placeholder="New Password" type="password" name="password" class="form-control">
 										</div>
-										<div class="form-group login-group-checkbox">
-											<input type="checkbox" id="lg_remember" name="remember">
-											<label for="lg_remember">Remember me</label>
+										<div class="form-group">
+											<input placeholder="Confirm Password" type="password" name="password_confirmation" class="form-control">
 										</div>
 									</div>
 									<button type="submit" class="login-button"><i class="fa fa-chevron-right"></i></button>
 								</div>
 								<div class="etc-login-form">
-									<p>Forgot your password? <a href="{!! route('forgot-password.get') !!}" data-hide="#login">Click here</a></p>
+									<p>Already have an account? <a href="{!! route('login.get') !!}" data-hide="#forgot-password">Login here</a></p>
 								</div>
 							</form>
 						</div>
@@ -82,6 +82,7 @@
 				</div>
 			</div>
 		</div>
+
 	</div>
 </body>
 </html>
