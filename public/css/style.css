@@ -401,3 +401,14 @@ td.calendar-day-head {
 .errors ul {
   list-style: none;
 }
+
+.calendar-day {
+  position: relative;
+}
+
+.calendar-day .fa {
+  position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 15px;
+}
