@@ -26,6 +26,7 @@ Route::get('password/reset/{token}', ['uses' =>'Auth\PasswordController@getReset
 Route::post('password/reset', ['uses' => 'Auth\PasswordController@postReset', 'as' => 'reset-password.post']);
 
 Route::get('home', ['as' => 'home', 'uses' => 'WelcomeController@getHome']);
+Route::get('search', ['as' => 'search', 'uses' => 'WelcomeController@getSearch']);
 
 Route::resource('projects', 'ProjectsController');
 Route::resource('tasks', 'TasksController');

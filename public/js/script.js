@@ -52,8 +52,12 @@ jQuery(document).ready(function($){
 					$('.modal-body').find('.form-control').first().focus(); 
 				}, 500);
 
+				var date = new Date();
+				date.setDate(date.getDate()-1);
+
 				$('.datepicker').datepicker({
-					autoclose: true
+					autoclose: true,
+					startDate: date
 				});
 				$('#myModal').modal('show');
 				$('#myModal').find('.modal-title').html(title);

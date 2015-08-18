@@ -30,7 +30,7 @@ function draw_calendar($month, $year, $flag){
 		$projects = App\Task::whereBetween('due_date', [
 		    \Carbon\Carbon::createFromDate($year, $month)->startOfMonth(),
 		    \Carbon\Carbon::createFromDate($year, $month)->endOfMonth()
-		])->where('status', 0)->get();
+		])->where('creator_id', \Auth::user()->id)->where('status', 0)->get();
 
 		$bookedDates = [];
 		foreach($projects as $project) {
@@ -94,7 +94,11 @@ function statusOptions() {
 }
 
 function getProjects() {
-	return App\Project::latest()->get();
+	return App\Project::latest()->where('creator_id', \Auth::user()->id)->get();
+}
+
+function getProjectsOptions() {
+	return App\Project::where('creator_id', \Auth::user()->id)->lists('name', 'id');
 }
 
 function getCategoryOptions() {

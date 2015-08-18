@@ -20,6 +20,14 @@ class Project extends Model {
     protected $fillable = ["id", "creator_id", "name", "description", "due_date", "status"];
 
 
+    public static function boot() {
+        parent::boot();
+
+        \App\Project::deleting(function($project) {
+            $project->tasks()->delete();
+        });
+    }
+
     public function getStatusAttribute($value) {
         return ($value) ? "Completed" : "Pending";
     }
@@ -30,5 +38,9 @@ class Project extends Model {
 
     public function user() {
         return $this->belongsTo('App\User', 'creator_id');
+    }
+
+    public function tasks() {
+        return $this->hasMany('App\Task', 'project_id');
     }
 }

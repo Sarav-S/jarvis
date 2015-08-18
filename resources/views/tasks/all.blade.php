@@ -20,6 +20,13 @@
 		</div>
 	</div>
 	
+	@if(isset($projectId))
+	<h3>
+		<?php $project = App\Project::find($projectId) ?>
+		Project : {!! $project->name !!}
+	</h3>
+	@endif
+
 	<table class="table table-bordered table-sorter" data-tablesaw-sortable data-tablesaw-sortable-switch>
 		<thead>
 			<tr>

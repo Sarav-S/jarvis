@@ -8,7 +8,16 @@
 	<?php $button = "Create"; ?>
 	{!! Form::open(['url' => route('tasks.store'), 'method' => 'POST']) !!}
 @endif
-	<input type="hidden" name="project_id" value="{!! $project !!}">		
+
+@if (isset($project))
+	<input type="hidden" name="project_id" value="{!! $project !!}">
+@else
+	<div class="form-group">
+		{!! Form::label('project_id', 'Project Name') !!}
+		{!! Form::select('project_id', getProjectsOptions(), '', ['class' => 'form-control', 'required' => 'required']) !!}
+	</div>
+@endif
+
 	<div class="form-group">
 		{!! Form::label('name', 'Task Name') !!} <em>*</em>
 		{!! Form::text('name', old('name'), ['class' => 'form-control', 'required' => 'required']) !!}

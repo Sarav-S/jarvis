@@ -11,6 +11,12 @@ Breadcrumbs::register('inbox', function($breadcrumbs)
     $breadcrumbs->push('Inbox', route('inbox'));
 });
 
+Breadcrumbs::register('search', function($breadcrumbs)
+{
+	$breadcrumbs->parent('home');
+    $breadcrumbs->push('Search', route('search'));
+});
+
 
 Breadcrumbs::register('projects.index', function($breadcrumbs)
 {

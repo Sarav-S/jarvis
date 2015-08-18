@@ -31,12 +31,12 @@ class TasksController extends Controller
         }
 
         if ($projectId) {
-            $tasks = Task::where('project_id', $projectId)->with('user')->orderBy('id', 'DESC')->get();
+            $tasks = Task::where('project_id', $projectId)->where('creator_id', \Auth::user()->id)->with('user')->orderBy('id', 'DESC')->get();
         } else {
             $tasks = Task::with('user')->whereBetween('due_date', [
                 Carbon::createFromFormat('d-m-Y', $date)->subDay(),
                 Carbon::createFromFormat('d-m-Y', $date)->addDay()
-            ])->get();
+            ])->where('creator_id', \Auth::user()->id)->get();
         }
 
         if (Request::wantsJson()) {
@@ -160,7 +160,7 @@ class TasksController extends Controller
 
         $tasks = Task::where('status', 0)
             ->where('due_date', '<=', date('Y-m-d'))
-            ->get();
+            ->where('creator_id', \Auth::user()->id)->get();
 
         if (Request::wantsJson()) {
             return $tasks;

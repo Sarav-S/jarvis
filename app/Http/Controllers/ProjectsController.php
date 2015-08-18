@@ -28,9 +28,9 @@ class ProjectsController extends Controller
             $projects = Project::with('user')->whereBetween('due_date', [
                 Carbon::createFromFormat('d-m-Y', $date)->subDay(),
                 Carbon::createFromFormat('d-m-Y', $date)->addDay()
-            ])->get();
+            ])->where('creator_id', \Auth::user()->id)->get();
         } else {
-            $projects = Project::with('user')->latest()->get();
+            $projects = Project::with('user')->where('creator_id', \Auth::user()->id)->latest()->get();
         }
 
         if (Request::wantsJson()) {

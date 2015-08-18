@@ -80,7 +80,7 @@ form#search-form {
   background-color: #474F5F;
   border: none;
   padding: 5px;
-  text-transform: uppercase;
+  color: #f4f4f4;
   font-weight: 600;
   padding-left: 10px;
 }
@@ -121,6 +121,7 @@ form#search-form {
 #content .inner {
 	width: 70%;
 }
+
 .right-sidebar {
   width: 30%;
   height: 100%;
@@ -411,4 +412,35 @@ td.calendar-day-head {
     top: 5px;
     left: 5px;
     font-size: 15px;
+}
+
+.add-task {
+    position: absolute;
+    right: 65px;
+    padding: 4px 11px;
+    top: 6px;
+    border: 1px solid #474F5F;
+    background-color: #474F5F;
+    border-radius: 4px;
+    font-size: 20px;
+    color: #CACACA;
+}
+
+.add-task:hover {
+    color: #CACACA;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 1023px) {
+  .right-sidebar {
+    position: relative;
+    right: none;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .right-sidebar {
+    position: fixed;
+    right: 0;
+  }
 }

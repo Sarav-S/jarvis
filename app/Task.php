@@ -2,9 +2,19 @@
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Task extends Model {
 	
+    use SoftDeletes;
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
 	protected $table = "tasks";
 
 	protected $fillable = ["name", "description", "category_id", "project_id", 'creator_id', 'due_date', 'status'];
