@@ -74,3 +74,7 @@
 		</tbody>
 	</table>
 @stop
+
+@section('sidebar')
+	@include('sidebar')
+@stop

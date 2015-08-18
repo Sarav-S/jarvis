@@ -28,6 +28,9 @@ Route::post('password/reset', ['uses' => 'Auth\PasswordController@postReset', 'a
 Route::get('home', ['as' => 'home', 'uses' => 'WelcomeController@getHome']);
 Route::get('search', ['as' => 'search', 'uses' => 'WelcomeController@getSearch']);
 
+Route::get('account', ['as' => 'get-account', 'uses' => 'WelcomeController@getAccount']);
+Route::post('account', ['as' => 'post-account', 'uses' => 'WelcomeController@postAccount']);
+
 Route::resource('projects', 'ProjectsController');
 Route::resource('tasks', 'TasksController');
 Route::get('/projects/{projects}', ['uses' => 'ProjectsController@show', 'as' => 'projects']);

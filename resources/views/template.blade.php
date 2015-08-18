@@ -26,10 +26,15 @@
 		<div class="container-fluid" id="content">
 			<div class="row">
 				<div class="col-sm-8 middle">
+
+					@if(Session::has('message'))
+						<p class="{!! Session::get('class') !!}">{!! Session::get('message') !!}</p>
+					@endif
+
 					@yield('content')
 				</div>
 				<div class="col-sm-4 right-sidebar">
-					@include('sidebar')
+					@yield('sidebar')
 				</div>
 			</div>
 		</div>

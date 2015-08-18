@@ -332,6 +332,24 @@ div.day-number		{ padding:5px; color:#555; font-weight:300; margin:0px; width:20
 /* shared */
 td.calendar-day, td.calendar-day-np { width:120px; padding:10px; border-bottom:1px solid #999; border-right:1px solid #999; }
 
+.right-sidebar td.calendar-day, .right-sidebar td.calendar-day-np {
+  padding: 0px;
+  width: 80px;
+}
+.right-sidebar td.calendar-day-head {
+  padding: 0;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.right-sidebar div.day-number {
+  font-size: 20px;
+}
+
+.right-sidebar .calendar-day .fa {
+  font-size: 10px;
+}
+
 td.calendar-day-head {
   background: #fff;
   font-weight: 300;
@@ -442,5 +460,6 @@ td.calendar-day-head {
   .right-sidebar {
     position: fixed;
     right: 0;
+    top: 98px;
   }
 }

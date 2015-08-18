@@ -38,6 +38,12 @@
 				<span class="label">Inbox</span>
 			</a>
 		</li>
+		<li>
+			<a href="{!! route('get-account') !!}">
+				<i class="fa fa-dashboard"></i>
+				<span class="label">My Account</span>
+			</a>
+		</li>
 	</ul>
 	<h4 class="title">
 		<a href="{!! url('/projects') !!}" class="project-all">PROJECTS</a>
