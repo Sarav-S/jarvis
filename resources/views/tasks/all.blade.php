@@ -10,9 +10,11 @@
 	<div class="header">
 		<div class="row">
 			<div class="col-sm-4">
+				@if(Request::get('project_id'))
 				<a href="{!! route('tasks.create') !!}" class="btn-blue open-modal" data-title="Add New Task" data-project="{!! $projectId !!}">
 					Add Task
 				</a>
+				@endif
 			</div>
 			<div class="col-sm-4">
 			</div>

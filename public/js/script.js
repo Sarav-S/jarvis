@@ -17,9 +17,28 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	$('.calendar-day').click(function(e){
+	$('body').on('click', '.calendar-day',  function(e){
 		window.location = $(this).attr('data-href');
 	});
+
+	$("#monthpicker").datepicker( {
+	    format: "mm-yyyy",
+	    startView: "months", 
+	    minViewMode: "months",
+	    orientation: 'top right',
+	    autoclose : true,
+	    
+	}).on('changeDate', function(){
+		$.ajax({
+			url : baseurl + "get-calendar",
+			data : { month : $(this).val() },
+			success : function(response) {
+				$('h2.month').find('span').html(response.month);
+				$('.calendar-left').find('.table-responsive').html(response.html);
+			}
+		});
+	});
+
 
 	$('.delete').click(function(e){
 		e.preventDefault();
@@ -32,7 +51,7 @@ jQuery(document).ready(function($){
 		}); 
 	});
 
-	$('.open-modal').click(function(e){
+	$('body').on('click', '.open-modal', function(e){
 		e.preventDefault();
 
 		var that_ = $(this),

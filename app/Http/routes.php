@@ -34,3 +34,5 @@ Route::post('account', ['as' => 'post-account', 'uses' => 'WelcomeController@pos
 Route::resource('projects', 'ProjectsController');
 Route::resource('tasks', 'TasksController');
 Route::get('/projects/{projects}', ['uses' => 'ProjectsController@show', 'as' => 'projects']);
+
+Route::get('/get-calendar', ['uses' => 'WelcomeController@getCalendar']);

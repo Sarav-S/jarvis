@@ -1,10 +1,5 @@
-<?php $projects = getProjects(); ?>
+
 <nav class="main-navbar">
-	<button type="button" class="toggler">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>
 	<a href="{!! url('/') !!}" class="brand-name">Jarvis</a>
 	@if(count($projects))
 	<a href="{!! route('tasks.create') !!}" class="add-task open-modal" data-title="Add New Task" ><i class="fa fa-plus"></i></a>
@@ -24,42 +19,3 @@
 	</form>
 </nav>
 
-<div id="sidebar">
-	<ul class="links">
-		<li>
-			<a href="{!! route('home') !!}">
-				<i class="fa fa-calendar"></i>
-				<span class="label">My Calendar</span>
-			</a>
-		</li>
-		<li>
-			<a href="{!! route('inbox') !!}">
-				<i class="fa fa-inbox"></i>
-				<span class="label">Inbox</span>
-			</a>
-		</li>
-		<li>
-			<a href="{!! route('get-account') !!}">
-				<i class="fa fa-dashboard"></i>
-				<span class="label">My Account</span>
-			</a>
-		</li>
-	</ul>
-	<h4 class="title">
-		<a href="{!! url('/projects') !!}" class="project-all">PROJECTS</a>
-		<a href="{!! route('projects.create') !!}" class="add-project open-modal" data-title="Add New Project">
-			<i class="fa fa-plus"></i>
-		</a>
-	</h4>
-	<ul class="projects">
-		<?php $projects = getProjects(); ?>
-		@foreach($projects as $project)
-		<li>
-			<a href="{!! route('tasks.index', ['project_id' => $project->id]) !!}">
-				<i class="fa fa-folder"></i>
-				{!! $project->name !!}
-			</a>
-		</li>
-		@endforeach
-	</ul>
-</div>

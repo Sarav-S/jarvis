@@ -51,7 +51,7 @@ function draw_calendar($month, $year, $flag){
 		}
 
 		$calendar.= '<td class="calendar-day '.$class.'" data-href="'.route('tasks.index').'?date='.$list_day.'-'.$month.'-'.$year.'">';
-			if ($list_day == date('d')) {
+			if ($list_day == date('d') && $month == date('m') && $year == date('Y')) {
 				$calendar .= "<i class='fa fa-calendar'></i>";
 			}
 			/* add in the day number */

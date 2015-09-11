@@ -77,4 +77,14 @@ class WelcomeController extends Controller {
                 ]);
         }
     }
+
+    public function getCalendar() {
+        $calendar = explode('-', Request::get('month'));
+
+        $dateObj   = \DateTime::createFromFormat('!m', $calendar[0]);
+        $monthName = $dateObj->format('F'); // March
+
+        $result = ['month' => $monthName.' '.$calendar[1], 'html' => draw_calendar($calendar[0], $calendar[1], true)];
+        return \Response::json($result);
+    }
 }

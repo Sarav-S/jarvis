@@ -1,15 +1,15 @@
 * {
-	font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   outline: none;
 }
 body {
-	overflow-x:hidden;
+  overflow-x:hidden;
 }
 
 .main-navbar {
-	background-color: #282d37;
-	min-height: 50px;
-	z-index: 99;
+  background-color: #282d37;
+  min-height: 50px;
+  z-index: 99;
   position: relative;
 }
 
@@ -29,7 +29,7 @@ button.toggler {
 }
 
 .projects {
-	padding-left: 0;
+  padding-left: 0;
 }
 
 .projects a {
@@ -40,8 +40,8 @@ button.toggler {
 }
 
 .projects a .fa{
-	font-size: 16px;
-	margin-right: 5px;
+  font-size: 16px;
+  margin-right: 5px;
 }
 
 .right-sidebar ul.tabs {
@@ -64,7 +64,7 @@ button.toggler {
 }
 
 .right-sidebar .tabs li.active {
-	background-color: #e3e3e3;
+  background-color: #e3e3e3;
 }
 
 form#search-form {
@@ -101,7 +101,7 @@ form#search-form {
 
 #sidebar .title{
   display: block;
-	font-size: 15px;
+  font-size: 15px;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: 10px;
@@ -119,7 +119,7 @@ form#search-form {
 }
 
 #content .inner {
-	width: 70%;
+  width: 70%;
 }
 
 .right-sidebar {
@@ -137,23 +137,23 @@ form#search-form {
     padding-bottom: 10px;
 }
 .main-content{
-	background: #fff;
-	position: relative;
-	-webkit-transition: all .35s ease-in-out;
-	-moz-transition: all .35s ease-in-out;
-	transition: all .35s ease-in-out;
-	box-shadow: 0 -58px 40px rgba(0, 0, 0, 1);
-	height: 100%;
+  background: #fff;
+  position: relative;
+  -webkit-transition: all .35s ease-in-out;
+  -moz-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
+  box-shadow: 0 -58px 40px rgba(0, 0, 0, 1);
+  height: 100%;
 }
 
 .main-content.open {
-	-webkit-transform: translateX(240px);
-	-moz-transform: translateX(240px);
-	transform: translateX(240px);
+  -webkit-transform: translateX(240px);
+  -moz-transform: translateX(240px);
+  transform: translateX(240px);
 }
 
 .logout {
-	position: absolute;
+  position: absolute;
   right: 0;
   font-size: 24px;
   color: #fff;
@@ -162,23 +162,27 @@ form#search-form {
 }
 
 .logout:hover {
-	color: #e8e8e8;
+  color: #e8e8e8;
+}
+
+div#content {
+    padding: 0;
 }
 
 #sidebar {
-	background-color: #474f60;
-	width: 240px;
-	position: fixed;
-	height: 100%;
-	left: -240px;
-	-webkit-transition: all .35s ease-in-out;
-	-moz-transition: all .35s ease-in-out;
-	transition: all .35s ease-in-out;
+  background-color: #474f60;
+  width: 15%;
+  position: fixed;
+  height: 100%;
+  left: 0px;
+  -webkit-transition: all .35s ease-in-out;
+  -moz-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
 }
 
 #sidebar.active {
-	left: 0;
-	z-index: 3;
+  left: 0;
+  z-index: 3;
 }
 
 #sidebar ul.links {
@@ -187,7 +191,7 @@ form#search-form {
 }
 
 #sidebar .links li{
-	display: block;
+  display: block;
 }
 
 #sidebar .links a {
@@ -199,7 +203,7 @@ form#search-form {
 }
 
 #sidebar .links a .fa {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 #sidebar .links span.label {
@@ -208,33 +212,42 @@ form#search-form {
 }
 
 a {
-	text-decoration: none;
-	font-family: "Open Sans", sans-serif;
-	cursor: pointer;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 }
 
 a:hover, a:focus {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 
 ul,
 ol {
-	list-style: none;
+  list-style: none;
 }
 
 .header {
-	margin: 0 0 20px;
+  margin: 12px 0 20px;
 }
 
 .header .month {
-	font-weight: 300;
-	text-align: center;
-	margin: 0;
+  font-weight: 300;
+  text-align: left;
+  margin: 0;
+  position: relative;
+}
+
+.calendar-left {
+  width: 70%;
+}
+
+.calendar-right {
+  width: 30%;
 }
 
 .btn-blue {
-	padding: 8px 20px;
+  padding: 8px 20px;
   display: inline-block;
   background-color: #4ba9df;
   color: #fff;
@@ -244,8 +257,8 @@ ol {
 }
 
 .btn-blue:hover, .btn-blue:focus {
-	color: #fff;
-	background-color: #439BCD;
+  color: #fff;
+  background-color: #439BCD;
 }
 
 .btn-grey {
@@ -266,16 +279,19 @@ ol {
 }
 
 .brand-name {
-	font-family: "Lobster" !important;
-	  color: #fff !important;
-	  font-size: 28px;
-	  position: absolute;
-	  left: 54px;
-	  top: 2px;
+  font-family: "Lobster" !important;
+  color: #fff !important;
+  font-size: 28px;
+  position: absolute;
+  left: 10px;
+  top: 2px;
 }
 
 #content .middle{
-	padding-top: 20px;
+  position: fixed;
+  width: 85%;
+  left: 15%;
+  padding: 12px;
 }
 
 .breadcrumb {
@@ -321,14 +337,14 @@ ol {
 }
 
 /* calendar */
-table.calendar		{ border-left:1px solid #999; }
-tr.calendar-row	{  }
-td.calendar-day	{ cursor:pointer; min-height:80px; font-size:11px; position:relative; text-align: center;} * html div.calendar-day { height:80px; }
-td.calendar-day:hover	{ background:#eceff5; }
-td.calendar-day-np	{ background:#fff; min-height:80px; } 
+table.calendar    { border-left:1px solid #999; }
+tr.calendar-row {  }
+td.calendar-day { cursor:pointer; min-height:80px; font-size:11px; position:relative; text-align: center;} * html div.calendar-day { height:80px; }
+td.calendar-day:hover { background:#eceff5; }
+td.calendar-day-np  { background:#fff; min-height:80px; } 
 * html div.calendar-day-np { height:80px; }
 
-div.day-number		{ padding:5px; color:#555; font-weight:300; margin:0px; width:20px; text-align:center; display: inline;font-size: 25px;}
+div.day-number    { padding:5px; color:#555; font-weight:300; margin:0px; width:20px; text-align:center; display: inline;font-size: 25px;}
 /* shared */
 td.calendar-day, td.calendar-day-np { width:120px; padding:10px; border-bottom:1px solid #999; border-right:1px solid #999; }
 
@@ -397,11 +413,11 @@ td.calendar-day-head {
 }
 
 .load-content {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .dynamic-content {
-	color: #555;
+  color: #555;
 }
 
 .dynamic-content p {
@@ -409,7 +425,7 @@ td.calendar-day-head {
 }
 
 .dynamic-content .fa {
-	margin-right: 5px;
+  margin-right: 5px;
 }
 
 .errors {
@@ -425,6 +441,15 @@ td.calendar-day-head {
   position: relative;
 }
 
+input#monthpicker {
+    width: 100px;
+    position: absolute;
+    right: 56px;
+    height: 30px;
+    top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
 .calendar-day .fa {
   position: absolute;
     top: 5px;
