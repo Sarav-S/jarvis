@@ -8,16 +8,16 @@
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="{!! asset('css/bootstrap-datepicker.min.css') !!}">
-	<link rel="stylesheet" href="{!! asset('css/tablesaw.css') !!}">
-	<link rel="stylesheet" href="{!! asset('css/style.css') !!}">
+	<link rel="stylesheet" href="{!! asset('public/css/bootstrap-datepicker.min.css') !!}">
+	<link rel="stylesheet" href="{!! asset('public/css/tablesaw.css') !!}">
+	<link rel="stylesheet" href="{!! asset('public/css/style.css') !!}">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="{!! asset('js/bootstrap-datepicker.min.js') !!}"></script>
-	<script src="{!! asset('js/bootbox.min.js') !!}"></script>
-	<script src="{!! asset('js/tablesaw.js') !!}"></script>
-	<script src="{!! asset('js/script.js') !!}"></script>
+	<script src="{!! asset('public/js/bootstrap-datepicker.min.js') !!}"></script>
+	<script src="{!! asset('public/js/bootbox.min.js') !!}"></script>
+	<script src="{!! asset('public/js/tablesaw.js') !!}"></script>
+	<script src="{!! asset('public/js/script.js') !!}"></script>
 	<script>
 		var baseurl = "<?php echo url('/') ?>/";
 	</script>
