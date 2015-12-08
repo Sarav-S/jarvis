@@ -291,7 +291,9 @@ ol {
   position: fixed;
   width: 85%;
   left: 15%;
-  padding: 12px;
+  padding: 12px 12px 30px;
+  overflow: scroll;
+  height: 100%;
 }
 
 .breadcrumb {
